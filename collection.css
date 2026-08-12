@@ -1,0 +1,26 @@
+/* collection.css */
+.collection-section { margin-bottom: 80px; }
+.section-intro { color: var(--grey-dark); max-width: 700px; margin-bottom: 24px; }
+
+.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+
+.category-card { display: block; text-decoration: none; color: inherit; }
+.category-card h4 { margin-bottom: 4px; }
+.category-count { margin: 0; font-size: 0.85rem; color: var(--grey-dark); }
+
+.category-card.full-width { grid-column: 1 / -1; }
+
+.category-photo { height: 180px; margin-bottom: 12px; position: relative; overflow: hidden; }
+.category-card.full-width .category-photo { height: 140px; }
+
+/* Rotation frames: stacked and crossfaded, so the outer box/label/link stay fixed */
+.rotate-img { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0; transition: opacity 0.5s ease; pointer-events: none; }
+.rotate-img.active { opacity: 1; }
+
+@media (max-width: 900px) {
+    .category-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .category-grid { grid-template-columns: 1fr; }
+}

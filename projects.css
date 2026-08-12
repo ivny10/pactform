@@ -1,0 +1,302 @@
+.eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+.eyebrow-light {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--grey-mid);
+    margin-bottom: 12px;
+}
+
+/* Section Header Shared Layouts */
+.section-heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 32px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 16px;
+}
+.heading-desc, .section-intro {
+    max-width: 480px;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--grey-dark);
+}
+
+/* Projects Hero */
+.projects-hero {
+    margin-bottom: 64px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 48px;
+}
+.projects-hero .subtext {
+    display: block;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    color: var(--accent);
+}
+.projects-hero .hero-desc {
+    max-width: 720px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--black);
+}
+
+/* Designed Around Projects (3-Column Pillars) */
+.designed-around-projects {
+    margin-bottom: 80px;
+}
+.project-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border-color);
+    background: var(--border-color);
+    gap: 1px; /* Sharp 1px border lines between boxes */
+}
+.pillar-box {
+    background: var(--white);
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+}
+.pillar-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--grey-dark);
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--grey-light);
+    padding-bottom: 8px;
+}
+.pillar-box h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: var(--black);
+}
+.pillar-box p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--grey-dark);
+    line-height: 1.6;
+}
+
+/* Custom Hero Block (Dark architectural callout banner) */
+.custom-hero-block {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 48px 40px;
+    margin-bottom: 64px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: center;
+    border-left: 6px solid var(--accent);
+}
+.custom-hero-content h1 {
+    color: var(--white);
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    margin-bottom: 16px;
+}
+.custom-hero-content p {
+    color: var(--grey-mid);
+    max-width: 560px;
+    margin-bottom: 28px;
+}
+.custom-hero-materials {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 32px;
+}
+.custom-hero-materials h5 {
+    color: var(--white);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+.custom-hero-materials p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Spec Process Grid (3-Step Cards) */
+.change-table {
+    margin-bottom: 80px;
+}
+.spec-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.spec-step-card {
+    border: 1px solid var(--border-color);
+    padding: 32px 28px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+.spec-step-card.accent-border {
+    border-color: var(--black);
+    background: var(--grey-light);
+}
+.spec-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+.spec-step-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.spec-step-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: var(--grey-dark);
+}
+
+/* How It Works Section */
+.how-section {
+    margin-bottom: 80px;
+}
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-color);
+    border: 1px solid var(--border-color);
+    margin-bottom: 32px;
+}
+.step-item {
+    background: var(--white);
+    padding: 32px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.step-item.highlight-step {
+    background: #fffdfa;
+    border-left: 3px solid var(--accent);
+}
+.step-num {
+    flex: 0 0 36px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--black);
+    background: var(--grey-light);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.step-content h4 {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+}
+.step-content p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--grey-dark);
+    line-height: 1.5;
+}
+.step-star {
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+.guarantee-banner {
+    background-color: var(--grey-light);
+    padding: 24px 32px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: 1px solid var(--black);
+    border-left: 6px solid var(--accent);
+    color: var(--black);
+}
+.guarantee-banner span {
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+/* Projects CTA Block */
+.projects-cta {
+    border-top: 1px solid var(--border-color);
+    padding-top: 64px;
+    margin-bottom: 80px;
+}
+.cta-box {
+    border: 1px solid var(--black);
+    padding: 48px;
+    background: var(--grey-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+.cta-box h2 {
+    margin-bottom: 12px;
+}
+.cta-box p {
+    max-width: 560px;
+    margin-bottom: 0;
+    color: var(--grey-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .project-pillars-grid,
+    .spec-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    .custom-hero-block {
+        grid-template-columns: 1fr;
+        padding: 36px 28px;
+    }
+    .custom-hero-materials {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-left: 0;
+        padding-top: 24px;
+    }
+    .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-hero .hero-buttons {
+        flex-direction: column;
+    }
+    .step-item {
+        padding: 24px 20px;
+    }
+}

@@ -1,0 +1,69 @@
+/* index.css */
+.hero { margin-bottom: 60px; }
+.hero-top { display: flex; gap: 40px; margin-bottom: 40px; }
+.hero-left { flex: 0 0 60%; min-width: 0; }
+.hero p.intro-text { font-size: 1.1rem; max-width: 80%; margin-bottom: 24px; }
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.carousel-container { height: 400px; margin-bottom: 60px; display: flex; align-items: center; justify-content: center; }
+.carousel-overlay { background-color: var(--white); padding: 40px; max-width: 600px; text-align: center; z-index: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--grey-mid); cursor: pointer; transition: background-color 0.2s; }
+.dot.active { background-color: var(--accent); }
+.carousel-arrow { position: absolute; font-size: 1.5rem; font-weight: bold; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border-color); cursor: pointer; z-index: 2; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex: 0 0 auto; }
+#prev-slide { left: 20px; } #next-slide { right: 20px; }
+.carousel-img-label { position: absolute; top: 20px; left: 20px; max-width: 240px; text-align: left; }
+
+/* Tablet: stack the hero text above the carousel instead of squeezing it into 60% width */
+@media (max-width: 900px) {
+    .hero-top { flex-direction: column; }
+    .hero-left { flex: 1 1 auto; }
+    .hero p.intro-text { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .carousel-img-label { display: none; }
+    .carousel-container { height: auto; min-height: 420px; padding: 56px 12px; }
+    .carousel-overlay { padding: 24px; max-width: 100%; }
+    .carousel-arrow { width: 34px; height: 34px; font-size: 1.2rem; }
+    #prev-slide { left: 8px; } #next-slide { right: 8px; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons .btn { width: 100%; text-align: center; }
+    .hero p.intro-text { font-size: 1rem; }
+}
+
+.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); }
+.point-item { display: flex; padding: 24px 0; border-bottom: 1px solid var(--border-color); gap: 12px; }
+.point-num { flex: 0 0 100px; font-size: 0.9rem; color: var(--grey-dark); }
+.point-content { flex: 1; min-width: 0; }
+.point-content p { margin-bottom: 0; font-size: 0.95rem; }
+
+@media (max-width: 480px) {
+    .point-item { flex-direction: column; gap: 4px; }
+    .point-num { flex-basis: auto; }
+}
+
+/* Shared description line under a section heading */
+.section-intro { color: var(--grey-dark); max-width: 700px; margin-bottom: 24px; }
+
+/* Reusable placeholder image + centered label, layered on top of .placeholder's crosshatch */
+.img-box { position: relative; display: flex; align-items: center; justify-content: center; }
+.img-label { background-color: var(--white); padding: 10px 24px; font-size: 0.85rem; font-weight: 600; text-align: center; z-index: 1; max-width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+
+/* Why Pactform */
+.why-section { margin-bottom: 80px; }
+.why-section p { max-width: 800px; margin-bottom: 16px; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+.why-photo { height: 260px; }
+
+@media (max-width: 768px) {
+    .why-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .why-photo { height: 200px; }
+}
+
+/* About (short version) — near the end of the homepage */
+.about-teaser { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding-top: 48px; }
+.about-teaser p { max-width: 800px; }
