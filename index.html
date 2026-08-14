@@ -20,7 +20,7 @@
                     <li><a href="custom.html">custom</a></li>
                     <li><a href="shipping.html">shipping</a></li>
                     <li><a href="projects.html">projects</a></li>
-                                    <li class="nav-list-item"><button class="btn btn-primary" id="toggle-list-btn-mobile">Your list</button></li>
+                    <li class="nav-list-item"><button class="btn btn-primary" id="toggle-list-btn-mobile">Your list</button></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -62,10 +62,9 @@
         });
     </script>
 
-
-    <main class="container">
+    <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero container">
             <div class="hero-top">
                 <div class="hero-left">
                     <h1>Contract furniture, direct from the source</h1>
@@ -77,114 +76,138 @@
                 </div>
             </div>
 
-            <!-- Carousel Area: six auto-advancing slides. Pauses on hover/focus and honours reduced-motion. -->
-            <div class="placeholder carousel-container" id="hero-carousel">
-                <button class="carousel-arrow" id="prev-slide" aria-label="Previous slide">&lt;</button>
-                <span class="img-label carousel-img-label" id="carousel-img-label">IMAGE: a full restaurant mid-service, the chairs doing their job</span>
-                <div class="carousel-overlay" id="carousel-content">
+            <!-- Carousel Area: Full images integration -->
+            <div class="carousel-container" id="hero-carousel" style="position: relative; overflow: hidden; background-color: var(--black);">
+                <img id="carousel-bg-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Commercial interior" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0; filter: brightness(0.7);">
+                
+                <button class="carousel-arrow" id="prev-slide" aria-label="Previous slide" style="z-index: 2;">&lt;</button>
+                <div class="carousel-overlay" id="carousel-content" style="z-index: 2;">
                     <h3 id="carousel-title">Built for business, not retail showrooms</h3>
                     <p id="carousel-text">Contract-grade furniture for restaurants, cafes and bistros — and for hotels, offices and spas.</p>
                     <a href="#" style="color: var(--black); text-decoration: underline; font-size: 0.9rem; font-weight: 600;">View our manufacturing standards</a>
                     <div class="carousel-dots" id="carousel-dots"></div>
                 </div>
-                <button class="carousel-arrow" id="next-slide" aria-label="Next slide">&gt;</button>
+                <button class="carousel-arrow" id="next-slide" aria-label="Next slide" style="z-index: 2;">&gt;</button>
             </div>
         </section>
 
         <!-- Why Pactform -->
-        <section class="why-section">
+        <section class="why-section container">
             <h2>Why Pactform</h2>
             <p class="section-intro">We're a sourcing platform for contract furniture. We connect your project directly with the people who make it, and stay with it until it's delivered.</p>
             <p>Contract furniture is commercial-grade: purpose-built and tested for heavy daily use in public and business spaces. It has to meet safety, structural and durability standards that ordinary retail furniture doesn't — and projects also need consistency, replacement availability and reliable lead times. You don't need to know which factory makes it. That part is our job.</p>
             <div class="why-grid">
-                <div class="placeholder img-box why-photo">
-                    <span class="img-label">PHOTO — maker at work (rattan weaving)</span>
+                <div class="img-box why-photo">
+                    <img src="https://images.unsplash.com/photo-1622372738946-62e02505feb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maker at work" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <div class="placeholder img-box why-photo">
-                    <span class="img-label">PHOTO — finished pieces staged for QC</span>
+                <div class="img-box why-photo">
+                    <img src="https://images.unsplash.com/photo-1540932239986-30128078f3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Finished pieces staged for QC" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </section>
 
         <!-- The collection -->
-        <section class="collection-section">
+        <section class="collection-section container">
             <h2>The collection</h2>
             <p class="section-intro">Seven categories, all built for commercial use. Have a look through.</p>
             <div class="category-grid">
                 <a href="category.html?category=commercial" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — commercial (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — commercial (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — commercial (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Commercial" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Commercial</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=outdoor" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — outdoor (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — outdoor (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — outdoor (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1595835697203-b0fc9c719cc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Outdoor" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Outdoor</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=office" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — office (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — office (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — office (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Office" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Office</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=dining-chairs" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — dining chairs (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — dining chairs (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — dining chairs (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dining chairs" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Dining chairs</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=bar-stools" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — bar stools (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — bar stools (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — bar stools (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bar stools" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Bar stools</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=booth-seating" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — booth seating (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — booth seating (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — booth seating (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Booth seating" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Booth seating</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
 
                 <a href="category.html?category=tables" class="category-card">
-                    <div class="placeholder img-box category-photo" data-rotate>
-                        <span class="img-label rotate-img active">PRODUCT PHOTO — tables (1/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — tables (2/3)</span>
-                        <span class="img-label rotate-img">PRODUCT PHOTO — tables (3/3)</span>
+                    <div class="img-box category-photo">
+                        <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tables" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <h4>Tables</h4>
-                    <p class="category-count">[N] designs</p>
                 </a>
             </div>
         </section>
 
-        <!-- About (short version) -->
-        <section class="about-teaser">
+        <!-- FF&E Projects Block (Dark Block - Based on Ziqi's "Blue" Feedback) -->
+        <section class="container" style="background-color: var(--black); color: var(--white); padding: 56px 48px; margin: 80px auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; border-left: 6px solid var(--accent);">
+            <div class="ffe-hero-content">
+                <span style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-mid); margin-bottom: 12px;">FF&amp;E Projects</span>
+                <h2 style="color: var(--white); font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 16px;">Sourced as one complete schedule.</h2>
+                <p style="color: var(--grey-mid); max-width: 560px; margin-bottom: 28px;">Commercial furniture isn't residential furniture. Projects demand durability, consistency, and reliable lead times. We handle the manufacturing for your entire project so you can focus on the build.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">START A PROJECT</a>
+                </div>
+            </div>
+            <div class="ffe-hero-materials" style="border-left: 1px solid rgba(255, 255, 255, 0.15); padding-left: 32px;">
+                <h5 style="color: var(--white); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">What we deliver:</h5>
+                <p style="color: #cccccc; font-size: 0.9rem; line-height: 1.8; margin-bottom: 0;">Hotels &bull; Restaurants &bull; Cafes &bull; Workspaces &bull; Full furniture schedules &bull; Volume production &bull; Reliable lead times &bull; Commercial-grade build</p>
+            </div>
+        </section>
+
+        <!-- Upload Project BOQ Section -->
+        <section class="container" style="background-color: var(--grey-light); padding: 64px 40px; margin-bottom: 64px; text-align: center; border: 1px solid var(--border-color);">
+            <span class="eyebrow" style="margin-bottom: 12px;">Project Submission</span>
+            <h2 style="margin-bottom: 16px;">Upload your project or BOQ</h2>
+            <p style="margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">Send us your architectural drawings, furniture schedules, or Bill of Quantities (BOQ). Our engineering and procurement team will review your requirements.</p>
+            
+            <div style="border: 2px dashed var(--border-color); padding: 40px; background: var(--white); max-width: 500px; margin: 0 auto 24px auto; cursor: pointer;">
+                <svg style="width: 48px; height: 48px; fill: var(--grey-mid); margin-bottom: 1rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <p style="font-weight: 600; margin-bottom: 8px;">Drag & drop your files here</p>
+                <p style="font-size: 0.85rem; color: var(--grey-dark); margin-bottom: 0;">Supports PDF, DWG, XLSX, ZIP</p>
+            </div>
+            <button class="btn btn-primary">Browse Files</button>
+        </section>
+
+        <!-- Custom Furniture Block (Sculptural Piece - Based on Ziqi's "Green" Feedback) -->
+        <section class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 80px;">
+            <div class="img-box" style="height: 500px;">
+                <!-- Full image for sculptural custom piece -->
+                <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sculptural bespoke chair" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+                <span class="eyebrow" style="margin-bottom: 12px;">Custom Fabrication</span>
+                <h2 style="font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 16px;">Sometimes the perfect piece doesn't exist yet.</h2>
+                <p style="margin-bottom: 24px;">Send us a drawing, a mood board, or just an idea. We specialize in highly bespoke, made-to-spec, sculptural pieces tailored exactly to your vision and engineered to commercial standards.</p>
+                <a href="custom.html" class="btn btn-primary">SEND US YOUR SPEC SHEET</a>
+            </div>
+        </section>
+
+        <!-- About (short version) - Positioned at the bottom per screenshot flow -->
+        <section class="about-teaser container">
             <h2>We Started Pactform for One Simple Reason.</h2>
             <p>Finding commercial furniture shouldn't be harder than designing the space itself.</p>
             <p>Too often, businesses are limited by local catalogues, long distributor chains, and products that look identical from one supplier to the next. Yet behind many of these collections are talented manufacturers capable of far more than what's available locally. Pactform was created to bridge that gap.</p>
@@ -238,10 +261,9 @@
         </div>
     </footer>
 
-    <!-- Sticky WhatsApp: persistent on every page -->
+    <!-- Sticky WhatsApp -->
     <a href="https://wa.me/62xxxxxxxxxx" class="whatsapp-sticky" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="34" height="34" fill="currentColor">
-        <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
         <path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/>
     </svg>
 </a>
@@ -263,7 +285,7 @@
         </div>
     </div>
 
-    <!-- Scripts (Carousel, Collection rotation & Drawer) -->
+    <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Drawer logic
@@ -287,7 +309,7 @@
             closeModalBtn.addEventListener('click', closeDrawer);
             overlay.addEventListener('click', closeDrawer);
 
-            // Your list items — removable
+            // Your list items
             const listItems = [
                 { name: '[PRODUCT NAME] x24', meta: 'Rattan / natural — approx. W450 D520 H820' },
                 { name: '[PRODUCT NAME] x8', meta: 'Solid oak / black steel — approx. W1400 D700 H750' },
@@ -324,20 +346,20 @@
                 }).catch(() => {});
             });
 
-            // Carousel Logic — six slides, auto-advancing
+            // Carousel Logic
             const carouselData = [
-                { title: "Built for business, not retail showrooms", text: "Contract-grade furniture for restaurants, cafes and bistros — and for hotels, offices and spas.", image: "IMAGE: a full restaurant mid-service, the chairs doing their job" },
-                { title: "Some things only a few hands still make", text: "Hand-woven rattan from Indonesian makers, produced at commercial volume and to commercial standards.", image: "IMAGE: Indonesian maker weaving rattan, close on the hands" },
-                { title: "Every piece is checked before it ships", text: "Two hundred pieces inspected, wrapped and dispatched in a typical week — each one against your approved sample.", image: "IMAGE: 200 finished pieces staged for QC and shipping" },
-                { title: "Direct from trusted manufacturers", text: "We work with carefully selected partners rather than long distributor chains. Better pricing, more flexibility, more choice for your project.", image: "IMAGE: factory floor, pieces in production" },
-                { title: "More choices, not more compromises", text: "Different fabric, timber, colour, height or dimensions. Most contract furniture is designed to be customised.", image: "IMAGE: a custom piece beside its technical drawing" },
-                { title: "From one piece to one thousand", text: "Eight dining chairs for a cafe, or furniture for several hotel floors. We scale with the project.", image: "IMAGE: crated furniture being loaded for shipment" }
+                { title: "Built for business, not retail showrooms", text: "Contract-grade furniture for restaurants, cafes and bistros — and for hotels, offices and spas.", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
+                { title: "Some things only a few hands still make", text: "Hand-woven rattan from Indonesian makers, produced at commercial volume and to commercial standards.", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
+                { title: "Every piece is checked before it ships", text: "Two hundred pieces inspected, wrapped and dispatched in a typical week — each one against your approved sample.", image: "https://images.unsplash.com/photo-1540932239986-30128078f3b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
+                { title: "Direct from trusted manufacturers", text: "We work with carefully selected partners rather than long distributor chains. Better pricing, more flexibility, more choice for your project.", image: "https://images.unsplash.com/photo-1622372738946-62e02505feb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
+                { title: "More choices, not more compromises", text: "Different fabric, timber, colour, height or dimensions. Most contract furniture is designed to be customised.", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
+                { title: "From one piece to one thousand", text: "Eight dining chairs for a cafe, or furniture for several hotel floors. We scale with the project.", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" }
             ];
 
             let currentSlide = 0;
             const titleEl = document.getElementById('carousel-title');
             const textEl = document.getElementById('carousel-text');
-            const imgLabelEl = document.getElementById('carousel-img-label');
+            const bgImgEl = document.getElementById('carousel-bg-img');
             const dotsContainer = document.getElementById('carousel-dots');
             const heroCarousel = document.getElementById('hero-carousel');
 
@@ -352,7 +374,7 @@
             function updateCarousel() {
                 titleEl.textContent = carouselData[currentSlide].title;
                 textEl.textContent = carouselData[currentSlide].text;
-                imgLabelEl.textContent = carouselData[currentSlide].image;
+                bgImgEl.src = carouselData[currentSlide].image;
                 document.querySelectorAll('.carousel-dots .dot').forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentSlide);
                 });
@@ -370,7 +392,6 @@
                 updateCarousel(); resetAutoplay();
             });
 
-            // Autoplay: 6.5s per slide, paused on hover/focus, disabled for reduced-motion users
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let autoplayTimer = null;
             function startAutoplay() {
@@ -389,18 +410,6 @@
             heroCarousel.addEventListener('focusin', stopAutoplay);
             heroCarousel.addEventListener('focusout', startAutoplay);
             startAutoplay();
-
-            // Category photo rotation on the embedded collection grid
-            document.querySelectorAll('[data-rotate]').forEach((box) => {
-                const frames = box.querySelectorAll('.rotate-img');
-                if (frames.length < 2) return;
-                let current = 0;
-                setInterval(() => {
-                    frames[current].classList.remove('active');
-                    current = (current + 1) % frames.length;
-                    frames[current].classList.add('active');
-                }, 4000);
-            });
         });
     </script>
 </body>
