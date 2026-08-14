@@ -1,4 +1,15 @@
 /* index.css */
+
+/* .photo-cover / .photo-caption utilities now live in global.css so every page can use them */
+
+/* Subtle architectural/editorial background pattern for sections that want texture without an image */
+.pattern-band {
+    background-color: var(--grey-light);
+    background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.045) 0px, rgba(26,26,26,0.045) 1px, transparent 1px, transparent 26px);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
 .hero { margin-bottom: 60px; }
 .hero-top { display: flex; gap: 40px; margin-bottom: 40px; }
 .hero-left { flex: 0 0 60%; min-width: 0; }
@@ -32,7 +43,8 @@
     .hero p.intro-text { font-size: 1rem; }
 }
 
-.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); }
+/* Points list sits inside a subtle patterned band for texture variation on the page */
+.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding: 8px 0 8px; }
 .point-item { display: flex; padding: 24px 0; border-bottom: 1px solid var(--border-color); gap: 12px; }
 .point-num { flex: 0 0 100px; font-size: 0.9rem; color: var(--grey-dark); }
 .point-content { flex: 1; min-width: 0; }
@@ -50,24 +62,56 @@
 .img-box { position: relative; display: flex; align-items: center; justify-content: center; }
 .img-label { background-color: var(--white); padding: 10px 24px; font-size: 0.85rem; font-weight: 600; text-align: center; z-index: 1; max-width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
 
-/* Why Pactform */
-.why-section { margin-bottom: 80px; }
+/* Why Pactform — sits on a subtle patterned band for texture variation on the page */
+.why-section { margin-bottom: 0; padding: 56px 0 64px; }
 .why-section p { max-width: 800px; margin-bottom: 16px; }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-.why-photo { height: 260px; }
+.why-photo { height: 320px; position: relative; }
 
 @media (max-width: 768px) {
     .why-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-    .why-photo { height: 200px; }
+    .why-photo { height: 220px; }
 }
 
-/* About (short version) — near the end of the homepage */
-.about-teaser { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding-top: 48px; }
-.about-teaser p { max-width: 800px; }
-.about-teaser-media { height: 260px; margin-top: 32px; }
+/* About (short version) — full-bleed immersive photo band near the end of the homepage.
+   Breaks out of the .container padding using the same negative-margin bleed technique
+   as the category carousel, so it reads edge-to-edge like the client asked for. */
+.about-teaser { margin-bottom: 80px; }
+.about-teaser-band {
+    position: relative;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 72px 40px;
+    margin: 0 -40px;
+    width: calc(100% + 80px);
+    overflow: hidden;
+}
+.about-teaser-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.32;
+}
+.about-teaser-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.about-teaser-band h2 { color: var(--white); }
+.about-teaser-band p { color: var(--grey-mid); }
+.about-teaser-band .eyebrow { color: var(--accent); }
+
+@media (max-width: 900px) {
+    .about-teaser-band { padding: 56px 28px; margin: 0 -28px; width: calc(100% + 56px); }
+}
+
+@media (max-width: 600px) {
+    .about-teaser-band { padding: 40px 20px; margin: 0 -20px; width: calc(100% + 40px); }
+}
 
 /* Shared eyebrow accents (used by the new FF&E / Upload / Custom blocks) */
 .eyebrow {
