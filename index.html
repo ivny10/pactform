@@ -106,6 +106,75 @@
             </div>
         </section>
 
+        <!-- FF&E Projects -->
+        <section class="ffe-section">
+            <div class="ffe-banner">
+                <div class="placeholder img-box ffe-photo">
+                    <span class="img-label">PHOTO — hotel lobby / restaurant floor fully furnished with Pactform FF&amp;E</span>
+                </div>
+                <div class="ffe-copy">
+                    <span class="eyebrow">Commercial &amp; Hospitality</span>
+                    <h2>FF&amp;E Projects, Sourced as One Schedule</h2>
+                    <p>Full furniture, fixtures &amp; equipment programmes for hotels, restaurants, offices and mixed-use developments — sourced directly from manufacturers and coordinated under a single, accountable order.</p>
+                    <div>
+                        <a href="projects.html" class="btn btn-primary">Explore FF&amp;E projects</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ffe-pillars-grid">
+                <div class="ffe-pillar">
+                    <span class="pillar-tag">Full schedules</span>
+                    <p>Every room type and zone covered under one furniture schedule, one point of contact.</p>
+                </div>
+                <div class="ffe-pillar">
+                    <span class="pillar-tag">Volume production</span>
+                    <p>Consistent quality whether you're ordering twenty pieces or two thousand.</p>
+                </div>
+                <div class="ffe-pillar">
+                    <span class="pillar-tag">Site-matched timelines</span>
+                    <p>Production scheduled against your buildout, so furniture lands when the site is ready.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upload Project / BOQ -->
+        <section class="upload-section">
+            <div class="upload-panel">
+                <div class="upload-copy">
+                    <span class="eyebrow">Fast-Track Sourcing</span>
+                    <h2>Upload Your Project or BOQ</h2>
+                    <p>Already have a furniture schedule or Bill of Quantities? Upload it and we'll come back with pricing, lead times and availability matched line by line — no back-and-forth needed.</p>
+                </div>
+                <div class="upload-widget">
+                    <div class="upload-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <h5>Drop your BOQ or furniture list</h5>
+                    <p class="upload-hint">PDF, XLSX or CSV — up to 20MB</p>
+                    <label class="btn btn-primary" for="boq-upload-input">Upload project file</label>
+                    <input type="file" id="boq-upload-input" accept=".pdf,.xls,.xlsx,.csv,.doc,.docx">
+                    <div class="upload-filename" id="upload-filename"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Furniture -->
+        <section class="custom-teaser-section">
+            <div class="custom-teaser-block">
+                <div class="custom-teaser-content">
+                    <span class="eyebrow-light">Bespoke Fabrication</span>
+                    <h2>Sometimes the perfect piece doesn't exist yet.</h2>
+                    <p>One-off, sculptural, made-to-spec pieces — built around your drawing, your dimensions, or a photo of something you loved. Engineered to commercial standards, not just a one-time craft project.</p>
+                    <div>
+                        <a href="custom.html" class="btn btn-primary">Send us your spec sheet</a>
+                    </div>
+                </div>
+                <div class="custom-teaser-photo">
+                    <span class="img-label">PHOTO — sculptural custom piece beside its technical drawing</span>
+                </div>
+            </div>
+        </section>
+
         <!-- The collection -->
         <section class="collection-section">
             <h2>The collection</h2>
@@ -190,6 +259,9 @@
             <p>Too often, businesses are limited by local catalogues, long distributor chains, and products that look identical from one supplier to the next. Yet behind many of these collections are talented manufacturers capable of far more than what's available locally. Pactform was created to bridge that gap.</p>
             <p>We connect projects directly with trusted manufacturers, making commercial furniture sourcing simpler, more transparent, and more flexible.</p>
             <p>Whether you're furnishing a café, a hotel, an office, or an entire development, our goal is always the same: help you find the right furniture — not simply sell you what's available.</p>
+            <div class="placeholder img-box about-teaser-media">
+                <span class="img-label">PHOTO — Pactform team reviewing a furniture schedule with a manufacturer</span>
+            </div>
         </section>
 
     </main>
@@ -323,6 +395,17 @@
                     setTimeout(() => { copyLinkBtn.textContent = original; }, 1500);
                 }).catch(() => {});
             });
+
+            // Upload Project / BOQ widget — shows the selected filename
+            const boqInput = document.getElementById('boq-upload-input');
+            const uploadFilename = document.getElementById('upload-filename');
+            if (boqInput && uploadFilename) {
+                boqInput.addEventListener('change', () => {
+                    if (boqInput.files.length > 0) {
+                        uploadFilename.textContent = 'Selected: ' + boqInput.files[0].name;
+                    }
+                });
+            }
 
             // Carousel Logic — six slides, auto-advancing
             const carouselData = [
