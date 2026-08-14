@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- Carousel Area: Full images integration -->
+            <!-- Carousel Area -->
             <div class="carousel-container" id="hero-carousel" style="position: relative; overflow: hidden; background-color: var(--black);">
                 <img id="carousel-bg-img" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Commercial interior" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0; filter: brightness(0.7);">
                 
@@ -162,7 +162,7 @@
             </div>
         </section>
 
-        <!-- FF&E Projects Block (Dark Block - Based on Ziqi's "Blue" Feedback) -->
+        <!-- FF&E Projects Block -->
         <section class="container" style="background-color: var(--black); color: var(--white); padding: 56px 48px; margin: 80px auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; border-left: 6px solid var(--accent);">
             <div class="ffe-hero-content">
                 <span style="display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-mid); margin-bottom: 12px;">FF&amp;E Projects</span>
@@ -192,10 +192,9 @@
             <button class="btn btn-primary">Browse Files</button>
         </section>
 
-        <!-- Custom Furniture Block (Sculptural Piece - Based on Ziqi's "Green" Feedback) -->
+        <!-- Custom Furniture Block -->
         <section class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 80px;">
             <div class="img-box" style="height: 500px;">
-                <!-- Full image for sculptural custom piece -->
                 <img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Sculptural bespoke chair" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div>
@@ -206,7 +205,7 @@
             </div>
         </section>
 
-        <!-- About (short version) - Positioned at the bottom per screenshot flow -->
+        <!-- About (short version) -->
         <section class="about-teaser container">
             <h2>We Started Pactform for One Simple Reason.</h2>
             <p>Finding commercial furniture shouldn't be harder than designing the space itself.</p>
@@ -268,7 +267,6 @@
     </svg>
 </a>
 
-    <!-- Your list drawer -->
     <div class="drawer-overlay hidden" id="drawer-overlay"></div>
     <div class="your-list-modal hidden" id="list-modal">
         <div class="modal-header">
@@ -288,7 +286,6 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Drawer logic
             const overlay = document.getElementById('drawer-overlay');
             const modal = document.getElementById('list-modal');
             const toggleListBtn = document.getElementById('toggle-list-btn');
@@ -309,7 +306,6 @@
             closeModalBtn.addEventListener('click', closeDrawer);
             overlay.addEventListener('click', closeDrawer);
 
-            // Your list items
             const listItems = [
                 { name: '[PRODUCT NAME] x24', meta: 'Rattan / natural — approx. W450 D520 H820' },
                 { name: '[PRODUCT NAME] x8', meta: 'Solid oak / black steel — approx. W1400 D700 H750' },
