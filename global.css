@@ -75,27 +75,6 @@ p { font-size: 1rem; color: var(--grey-dark); margin-bottom: 1rem; word-wrap: br
 .btn-secondary { background-color: var(--white); color: var(--black); border-color: var(--black); }
 .btn-secondary:hover { background-color: var(--grey-light); }
 
-/* Real-photo utility: fills a box edge-to-edge (used across pages in place of the wireframe .placeholder look) */
-.photo-cover {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--grey-light);
-}
-.photo-caption {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    background-color: rgba(255,255,255,0.92);
-    padding: 8px 16px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--black);
-    z-index: 1;
-}
-
 /* Image Placeholder (Wireframe 'X' style) */
 .placeholder {
     background-color: var(--grey-light); position: relative; display: flex; align-items: center; justify-content: center;

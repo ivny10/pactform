@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,8 +68,8 @@
             <p class="subtext">03.0 — Bespoke Commercial Fabrication</p>
             <h1>Sometimes the perfect piece doesn't exist yet.</h1>
             <p class="hero-desc">Send us a spec sheet, an architectural drawing, or a photo of something you liked. We'll help you turn it into the real thing—engineered and built to commercial hospitality standards.</p>
-            <div class="photo-cover custom-photo" style="background-image: url('https://images.unsplash.com/photo-1779031242515-205111711b23?fm=jpg&amp;q=75&amp;w=1600&amp;auto=format&amp;fit=crop');">
-                <span class="photo-caption">A custom piece, taking shape in the workshop</span>
+            <div class="placeholder img-box custom-photo">
+                <span class="img-label">PHOTO — a custom piece, ideally beside its technical drawing</span>
             </div>
             <div class="custom-buttons">
                 <a href="#results-strip" class="btn btn-primary">See recent work</a>
@@ -281,18 +281,11 @@
                 "Boardroom table, cable management built in",
                 "Custom bar front, reclaimed timber cladding"
             ];
-            const resultPhotos = [
-                'https://images.unsplash.com/photo-1779031242515-205111711b23?fm=jpg&q=65&w=700&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1758193783649-13371d7fb8dd?fm=jpg&q=65&w=700&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1779231926902-04df7346a967?fm=jpg&q=65&w=700&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1775059956734-78ffd2075cec?fm=jpg&q=65&w=700&auto=format&fit=crop'
-            ];
             const stripEl = document.getElementById('results-strip');
             results.forEach((caption, i) => {
                 const item = document.createElement('div');
                 item.className = 'result-item';
-                const bg = resultPhotos[i % resultPhotos.length];
-                item.innerHTML = '<div class="photo-cover result-photo" style="background-image: url(\'' + bg + '\');"></div>' +
+                item.innerHTML = '<div class="placeholder img-box result-photo"><span class="img-label">CUSTOM RESULT ' + (i + 1) + '</span></div>' +
                     '<p class="result-caption">' + caption + '</p>';
                 stripEl.appendChild(item);
             });

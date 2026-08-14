@@ -1,15 +1,4 @@
 /* index.css */
-
-/* .photo-cover / .photo-caption utilities now live in global.css so every page can use them */
-
-/* Subtle architectural/editorial background pattern for sections that want texture without an image */
-.pattern-band {
-    background-color: var(--grey-light);
-    background-image: repeating-linear-gradient(135deg, rgba(26,26,26,0.045) 0px, rgba(26,26,26,0.045) 1px, transparent 1px, transparent 26px);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
 .hero { margin-bottom: 60px; }
 .hero-top { display: flex; gap: 40px; margin-bottom: 40px; }
 .hero-left { flex: 0 0 60%; min-width: 0; }
@@ -43,8 +32,7 @@
     .hero p.intro-text { font-size: 1rem; }
 }
 
-/* Points list sits inside a subtle patterned band for texture variation on the page */
-.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding: 8px 0 8px; }
+.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); }
 .point-item { display: flex; padding: 24px 0; border-bottom: 1px solid var(--border-color); gap: 12px; }
 .point-num { flex: 0 0 100px; font-size: 0.9rem; color: var(--grey-dark); }
 .point-content { flex: 1; min-width: 0; }
@@ -62,188 +50,20 @@
 .img-box { position: relative; display: flex; align-items: center; justify-content: center; }
 .img-label { background-color: var(--white); padding: 10px 24px; font-size: 0.85rem; font-weight: 600; text-align: center; z-index: 1; max-width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
 
-/* Why Pactform — sits on a subtle patterned band for texture variation on the page */
-.why-section { margin-bottom: 0; padding: 56px 0 64px; }
+/* Why Pactform */
+.why-section { margin-bottom: 80px; }
 .why-section p { max-width: 800px; margin-bottom: 16px; }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-.why-photo { height: 320px; position: relative; }
+.why-photo { height: 260px; }
 
 @media (max-width: 768px) {
     .why-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-    .why-photo { height: 220px; }
+    .why-photo { height: 200px; }
 }
 
-/* About (short version) — full-bleed immersive photo band near the end of the homepage.
-   Breaks out of the .container padding using the same negative-margin bleed technique
-   as the category carousel, so it reads edge-to-edge like the client asked for. */
-.about-teaser { margin-bottom: 80px; }
-.about-teaser-band {
-    position: relative;
-    background-color: var(--black);
-    color: var(--white);
-    padding: 72px 40px;
-    margin: 0 -40px;
-    width: calc(100% + 80px);
-    overflow: hidden;
-}
-.about-teaser-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    opacity: 0.32;
-}
-.about-teaser-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 760px;
-    margin: 0 auto;
-}
-.about-teaser-band h2 { color: var(--white); }
-.about-teaser-band p { color: var(--grey-mid); }
-.about-teaser-band .eyebrow { color: var(--accent); }
-
-@media (max-width: 900px) {
-    .about-teaser-band { padding: 56px 28px; margin: 0 -28px; width: calc(100% + 56px); }
-}
-
-@media (max-width: 600px) {
-    .about-teaser-band { padding: 40px 20px; margin: 0 -20px; width: calc(100% + 40px); }
-}
-
-/* Shared eyebrow accents (used by the new FF&E / Upload / Custom blocks) */
-.eyebrow {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    margin-bottom: 8px;
-}
-.eyebrow-light {
-    display: block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--grey-mid);
-    margin-bottom: 12px;
-}
-
-/* ================================================================= */
-/* FF&E Projects — commercial / project-based furnishing              */
-/* ================================================================= */
-.ffe-section { margin-bottom: 80px; }
-.ffe-banner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--black);
-    background: var(--white);
-}
-.ffe-photo { min-height: 380px; border-right: 1px solid var(--black); }
-.ffe-copy { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-.ffe-copy h2 { margin-bottom: 16px; }
-.ffe-copy p { margin-bottom: 24px; max-width: 480px; }
-
-.ffe-pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border: 1px solid var(--border-color);
-    border-top: none;
-    background: var(--border-color);
-    gap: 1px;
-}
-.ffe-pillar { background: var(--white); padding: 28px 24px; }
-.ffe-pillar .pillar-tag {
-    display: block;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 10px;
-}
-.ffe-pillar p { margin-bottom: 0; font-size: 0.92rem; }
-
-@media (max-width: 900px) {
-    .ffe-banner { grid-template-columns: 1fr; }
-    .ffe-photo { border-right: none; border-bottom: 1px solid var(--black); min-height: 260px; }
-    .ffe-pillars-grid { grid-template-columns: 1fr; }
-}
-
-/* ================================================================= */
-/* Upload Project / BOQ                                               */
-/* ================================================================= */
-.upload-section { margin-bottom: 80px; }
-.upload-panel {
-    background: var(--grey-light);
-    border: 1px solid var(--black);
-    padding: 48px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-.upload-copy h2 { margin-bottom: 12px; }
-.upload-copy p { margin-bottom: 0; max-width: 460px; }
-
-.upload-widget { background: var(--white); border: 1px dashed var(--grey-dark); padding: 32px 24px; text-align: center; }
-.upload-widget .upload-icon { color: var(--accent); margin-bottom: 12px; }
-.upload-widget h5 { font-size: 0.95rem; margin-bottom: 6px; }
-.upload-widget .upload-hint { font-size: 0.8rem; margin-bottom: 20px; }
-.upload-widget input[type="file"] { display: none; }
-.upload-widget label.btn { width: 100%; }
-.upload-filename { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-top: 12px; word-break: break-all; min-height: 1.2em; }
-
-@media (max-width: 900px) {
-    .upload-panel { grid-template-columns: 1fr; padding: 32px 28px; }
-}
-
-/* ================================================================= */
-/* Custom Furniture — bespoke, sculptural, made-to-spec pieces        */
-/* ================================================================= */
-.custom-teaser-section { margin-bottom: 80px; }
-.custom-teaser-block {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 56px 48px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    border-left: 6px solid var(--accent);
-}
-.custom-teaser-content h2 { color: var(--white); font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 16px; }
-.custom-teaser-content p { color: var(--grey-mid); max-width: 480px; margin-bottom: 28px; }
-.custom-teaser-photo {
-    height: 320px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: #2b2b2b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-.custom-teaser-photo .img-label {
-    background: rgba(255, 255, 255, 0.08);
-    color: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-align: center;
-    box-shadow: none;
-}
-
-@media (max-width: 900px) {
-    .custom-teaser-block { grid-template-columns: 1fr; padding: 40px 28px; }
-    .custom-teaser-photo { height: 240px; }
-}
-
-@media (max-width: 600px) {
-    .ffe-copy, .upload-panel { padding: 32px 24px; }
-    .custom-teaser-block { padding: 32px 20px; }
-}
+/* About (short version) — near the end of the homepage */
+.about-teaser { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding-top: 48px; }
+.about-teaser p { max-width: 800px; }
