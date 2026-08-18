@@ -91,8 +91,9 @@ p { font-size: 1rem; color: var(--grey-dark); margin-bottom: 1rem; word-wrap: br
 header { padding: 24px 0; border-bottom: 3px solid var(--accent); margin-bottom: 60px; background-color: var(--white); position: sticky; top: 0; z-index: 50; }
 .header-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .logo a { font-size: 1.25rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--black); }
+.logo-img { display: block; height: clamp(48px, 6vw, 72px); width: auto; }
 nav ul { display: flex; list-style: none; gap: 32px; }
-nav a { text-decoration: none; color: var(--grey-dark); font-size: 0.9rem; font-weight: 500; text-transform: lowercase; transition: color 0.2s; }
+nav a { text-decoration: none; color: var(--grey-dark); font-size: 0.9rem; font-weight: 500; text-transform: uppercase; transition: color 0.2s; }
 nav a:hover, nav a.active-link { color: var(--accent); font-weight: 700; }
 
 .header-actions { display: flex; align-items: center; gap: 12px; flex: 0 0 auto; }
@@ -102,7 +103,7 @@ nav a:hover, nav a.active-link { color: var(--accent); font-weight: 700; }
 .nav-toggle {
     display: none;
     position: fixed;
-    top: 22px;
+    top: calc(3px + clamp(48px, 6vw, 72px) / 2);
     right: 40px;
     flex-direction: column;
     justify-content: center;
@@ -162,6 +163,7 @@ nav a:hover, nav a.active-link { color: var(--accent); font-weight: 700; }
 @media (max-width: 480px) {
     .header-actions .btn { padding: 10px 16px; font-size: 0.8rem; }
     .logo a { font-size: 1.05rem; }
+    .logo-img { height: 40px; }
 }
 
 /* Keep the floating toggle aligned with the container's edge as its padding shrinks */
@@ -169,7 +171,12 @@ nav a:hover, nav a.active-link { color: var(--accent); font-weight: 700; }
     .nav-toggle { right: 28px; }
 }
 @media (max-width: 600px) {
-    .nav-toggle { right: 20px; top: 18px; }
+    .nav-toggle { right: 20px; }
+}
+@media (max-width: 480px) {
+    /* Logo drops to a fixed 40px here (see .logo-img override above), so match the toggle's
+       vertical center to that fixed height instead of the fluid clamp() used above 480px. */
+    .nav-toggle { top: 23px; }
 }
 @media (max-width: 380px) {
     .nav-toggle { right: 16px; }
@@ -179,6 +186,7 @@ nav a:hover, nav a.active-link { color: var(--accent); font-weight: 700; }
 footer { border-top: 1px solid var(--border-color); padding-top: 60px; margin-top: 80px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 48px; }
 .footer-info h4 { font-size: 1.2rem; letter-spacing: 0.1em; margin-bottom: 16px; }
+.footer-logo-img { height: clamp(40px, 5vw, 56px); width: auto; margin-bottom: 16px; }
 .footer-info p { max-width: 300px; font-size: 0.9rem; }
 .footer-sub { font-size: 0.8rem; color: var(--grey-dark); margin-top: 4px; }
 
@@ -276,6 +284,62 @@ footer { border-top: 1px solid var(--border-color); padding-top: 60px; margin-to
     .whatsapp-sticky svg {
         width: 28px;
         height: 28px;
+    }
+}
+
+/* Floating "Get Product Updates" Button — bottom-left counterpart to the WhatsApp icon */
+.updates-sticky {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background-color: var(--black);
+    color: #ffffff !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.updates-sticky svg {
+    display: block;
+    flex-shrink: 0;
+    stroke: #ffffff;
+}
+
+.updates-sticky:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+    color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+    .updates-sticky {
+        bottom: 20px;
+        left: 20px;
+        padding: 12px 16px;
+        font-size: 0.75rem;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .updates-sticky span { display: none; }
+    .updates-sticky {
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
     }
 }
 /* SOLUSI BUG OVERLAY MENU MOBILE:

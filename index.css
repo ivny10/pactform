@@ -1,69 +1,324 @@
-/* index.css */
-.hero { margin-bottom: 60px; }
-.hero-top { display: flex; gap: 40px; margin-bottom: 40px; }
-.hero-left { flex: 0 0 60%; min-width: 0; }
-.hero p.intro-text { font-size: 1.1rem; max-width: 80%; margin-bottom: 24px; }
-.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+/* ==========================================================================
+   Hero — full-bleed image carousel
+   ========================================================================== */
 
-.carousel-container { height: 400px; margin-bottom: 60px; display: flex; align-items: center; justify-content: center; }
-.carousel-overlay { background-color: var(--white); padding: 40px; max-width: 600px; text-align: center; z-index: 1; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background-color: var(--grey-mid); cursor: pointer; transition: background-color 0.2s; }
-.dot.active { background-color: var(--accent); }
-.carousel-arrow { position: absolute; font-size: 1.5rem; font-weight: bold; background: rgba(255, 255, 255, 0.8); border: 1px solid var(--border-color); cursor: pointer; z-index: 2; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex: 0 0 auto; }
-#prev-slide { left: 20px; } #next-slide { right: 20px; }
-.carousel-img-label { position: absolute; top: 20px; left: 20px; max-width: 240px; text-align: left; }
+.hero-full-image {
+    margin-bottom: 60px;
+}
 
-/* Tablet: stack the hero text above the carousel instead of squeezing it into 60% width */
+/* Force full viewport width regardless of parent container, and pull the
+   image up under the header so it reads as a true edge-to-edge banner */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--black);
+
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -60px;
+
+    height: 90vh;
+    min-height: 560px;
+    max-height: 820px;
+}
+
+#carousel-bg-img {
+    transition: opacity 0.4s ease;
+}
+
+
+/* ==========================================================================
+   Hero — text overlay (centered over the image)
+   ========================================================================== */
+
+.carousel-content-wrapper {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    pointer-events: none;
+}
+
+.carousel-text-overlay {
+    text-align: center;
+    max-width: 620px;
+    pointer-events: auto;
+}
+
+.carousel-text-overlay h3 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+.carousel-text-overlay p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+}
+
+.carousel-link {
+    display: inline-block;
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+
+/* ==========================================================================
+   Hero — dot slider (centered at the bottom of the hero)
+   ========================================================================== */
+
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    pointer-events: auto;
+}
+
+.carousel-dots .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, width 0.2s ease;
+}
+
+.carousel-dots .dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.15);
+}
+
+.carousel-dots .dot.active {
+    background: var(--white);
+    width: 22px;
+    border-radius: 5px;
+}
+
+
+/* ==========================================================================
+   Hero — carousel arrows
+   ========================================================================== */
+
+.carousel-arrow {
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(6px);
+    color: var(--white);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+#prev-slide {
+    left: 24px;
+}
+
+#next-slide {
+    right: 24px;
+}
+
+.carousel-arrow svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
+.carousel-arrow:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--black);
+    transform: translateY(-52%);
+}
+
+.carousel-arrow:active {
+    transform: translateY(-50%);
+}
+
+
+/* ==========================================================================
+   Hero — relocated intro text (below the image, in the normal container)
+   ========================================================================== */
+
+.hero-text-relocated {
+    text-align: center;
+    padding-top: 48px;
+    margin-bottom: 60px;
+}
+
+.hero-text-relocated .intro-text {
+    max-width: 640px;
+    margin: 16px auto 28px;
+    color: var(--grey-dark);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+/* ==========================================================================
+   Hero — responsive
+   ========================================================================== */
+
 @media (max-width: 900px) {
-    .hero-top { flex-direction: column; }
-    .hero-left { flex: 1 1 auto; }
-    .hero p.intro-text { max-width: 100%; }
+    .hero-text-relocated .intro-text {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
-    .carousel-img-label { display: none; }
-    .carousel-container { height: auto; min-height: 420px; padding: 56px 12px; }
-    .carousel-overlay { padding: 24px; max-width: 100%; }
-    .carousel-arrow { width: 34px; height: 34px; font-size: 1.2rem; }
-    #prev-slide { left: 8px; } #next-slide { right: 8px; }
-    .hero-buttons { flex-direction: column; }
-    .hero-buttons .btn { width: 100%; text-align: center; }
-    .hero p.intro-text { font-size: 1rem; }
+    .carousel-container {
+        height: 68vh;
+        min-height: 460px;
+    }
+
+    .carousel-text-overlay h3 {
+        font-size: 1.3rem;
+    }
+
+    .carousel-text-overlay p {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    #prev-slide {
+        left: 12px;
+    }
+
+    #next-slide {
+        right: 12px;
+    }
+
+    .carousel-dots {
+        bottom: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-text-relocated .intro-text {
+        font-size: 1rem;
+    }
 }
 
-.points-list { margin-bottom: 80px; border-top: 1px solid var(--border-color); }
-.point-item { display: flex; padding: 24px 0; border-bottom: 1px solid var(--border-color); gap: 12px; }
-.point-num { flex: 0 0 100px; font-size: 0.9rem; color: var(--grey-dark); }
-.point-content { flex: 1; min-width: 0; }
-.point-content p { margin-bottom: 0; font-size: 0.95rem; }
 
-@media (max-width: 480px) {
-    .point-item { flex-direction: column; gap: 4px; }
-    .point-num { flex-basis: auto; }
+/* ==========================================================================
+   Shared helpers
+   ========================================================================== */
+
+.section-intro {
+    color: var(--grey-dark);
+    max-width: 700px;
+    margin-bottom: 24px;
 }
-
-/* Shared description line under a section heading */
-.section-intro { color: var(--grey-dark); max-width: 700px; margin-bottom: 24px; }
 
 /* Reusable placeholder image + centered label, layered on top of .placeholder's crosshatch */
-.img-box { position: relative; display: flex; align-items: center; justify-content: center; }
-.img-label { background-color: var(--white); padding: 10px 24px; font-size: 0.85rem; font-weight: 600; text-align: center; z-index: 1; max-width: 90%; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.img-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-/* Why Pactform */
-.why-section { margin-bottom: 80px; }
-.why-section p { max-width: 800px; margin-bottom: 16px; }
-.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
-.why-photo { height: 260px; }
+.img-label {
+    background-color: var(--white);
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+
+
+/* ==========================================================================
+   Why Pactform
+   ========================================================================== */
+
+.why-section {
+    margin-bottom: 80px;
+}
+
+.why-section p {
+    max-width: 800px;
+    margin-bottom: 16px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.why-photo {
+    height: 260px;
+}
 
 @media (max-width: 768px) {
-    .why-grid { grid-template-columns: 1fr; }
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
-    .why-photo { height: 200px; }
+    .why-photo {
+        height: 200px;
+    }
 }
 
-/* About (short version) — near the end of the homepage */
-.about-teaser { margin-bottom: 80px; border-top: 1px solid var(--border-color); padding-top: 48px; }
-.about-teaser p { max-width: 800px; }
+
+/* ==========================================================================
+   About (short version) — near the end of the homepage
+   ========================================================================== */
+
+.about-teaser {
+    margin-bottom: 80px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border-color);
+}
+
+.about-teaser p {
+    max-width: 800px;
+}
