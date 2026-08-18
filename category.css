@@ -7,9 +7,56 @@
 .filter-group { margin-bottom: 16px; }
 .filter-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--grey-dark); margin-bottom: 10px; }
 .tag-pill-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.filter-meta { display: flex; align-items: center; gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-color); }
+.filter-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border-color); }
 .filter-count { font-size: 0.85rem; color: var(--grey-dark); }
-.clear-filters { background: none; border: none; padding: 0; font-size: 0.85rem; font-weight: 600; text-decoration: underline; cursor: pointer; color: var(--black); }
+.clear-filters { background: none; border: none; padding: 8px 0; font-size: 0.85rem; font-weight: 600; text-decoration: underline; cursor: pointer; color: var(--black); }
+
+/* Tag pills — filter buttons + static product badges (previously missing / undefined) */
+.tag-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    color: var(--grey-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    min-height: 40px;
+}
+.tag-pill:hover { border-color: var(--black); color: var(--black); }
+.tag-pill.active { background: var(--black); border-color: var(--black); color: var(--white); }
+.tag-pill.static {
+    cursor: default;
+    background: var(--grey-light);
+    border-color: var(--grey-light);
+    color: var(--black);
+    min-height: auto;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Spec table — product dimensions / materials / good-for rows (previously missing / undefined) */
+.spec-table { border-top: 1px solid var(--border-color); margin: 24px 0; }
+.spec-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.spec-row .spec-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--grey-dark);
+}
+.spec-value { font-size: 0.95rem; color: var(--black); margin: 0; }
 
 /* Big carousel — bleeds off both edges of the container */
 .category-carousel-container { position: relative; height: 480px; margin: 8px -40px 16px; width: calc(100% + 80px); display: flex; align-items: center; justify-content: center; }
@@ -53,10 +100,15 @@
 .custom-teaser-small { margin-bottom: 80px; }
 .custom-teaser-small .custom-buttons { display: flex; gap: 16px; margin-top: 20px; }
 
+@media (max-width: 700px) {
+    .spec-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+}
+
 @media (max-width: 600px) {
     .category-carousel-container { margin-left: -20px; margin-right: -20px; width: calc(100% + 40px); height: 320px; }
     .category-carousel-container .carousel-arrow { width: 34px; height: 34px; font-size: 1.2rem; }
     .filter-meta { flex-wrap: wrap; }
+    .tag-pill { padding: 8px 14px; font-size: 0.8rem; }
     .product-actions { flex-direction: column; }
     .product-actions .btn { width: 100%; text-align: center; }
     .thumbnail { flex-basis: 180px; }

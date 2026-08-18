@@ -6,7 +6,6 @@
     <title>Pactform - Collection</title>
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="category.css">
-    <link rel="stylesheet" href="sharp-blocks.css">
 </head>
 <body>
 
@@ -423,6 +422,28 @@
             currentSlide = (currentSlide + 1) % currentSlides.length;
             updateCarousel();
         });
+
+        // Touch swipe support (mobile / tablet)
+        let catTouchStartX = 0;
+        let catTouchStartY = 0;
+        let catTouchActive = false;
+        bigCarousel.addEventListener('touchstart', (e) => {
+            catTouchStartX = e.changedTouches[0].clientX;
+            catTouchStartY = e.changedTouches[0].clientY;
+            catTouchActive = true;
+        }, { passive: true });
+        bigCarousel.addEventListener('touchend', (e) => {
+            if (!catTouchActive) return;
+            catTouchActive = false;
+            const dx = e.changedTouches[0].clientX - catTouchStartX;
+            const dy = e.changedTouches[0].clientY - catTouchStartY;
+            if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+                currentSlide = dx < 0
+                    ? (currentSlide + 1) % currentSlides.length
+                    : (currentSlide - 1 + currentSlides.length) % currentSlides.length;
+                updateCarousel();
+            }
+        }, { passive: true });
 
         // ---------- Product selection ----------
         function selectProduct(slug) {

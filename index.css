@@ -322,3 +322,154 @@
 .about-teaser p {
     max-width: 800px;
 }
+
+
+/* ==========================================================================
+   FF&E Projects — dark callout block (previously inline-styled, non-responsive)
+   ========================================================================== */
+
+.ffe-project-section {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 56px 48px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+    align-items: center;
+    border-left: 6px solid var(--accent);
+}
+.ffe-eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--grey-mid);
+    margin-bottom: 12px;
+}
+.ffe-heading {
+    color: var(--white);
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    margin-bottom: 16px;
+}
+.ffe-desc {
+    color: var(--grey-mid);
+    max-width: 560px;
+    margin-bottom: 28px;
+}
+.ffe-hero-materials {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 32px;
+}
+.ffe-hero-materials h5 {
+    color: var(--white);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+.ffe-hero-materials p {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .ffe-project-section {
+        grid-template-columns: 1fr;
+        padding: 40px 28px;
+        margin: 56px auto;
+        gap: 28px;
+    }
+    .ffe-hero-materials {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-left: 0;
+        padding-top: 24px;
+    }
+}
+@media (max-width: 600px) {
+    .ffe-project-section { padding: 32px 20px; }
+    .ffe-desc { max-width: 100%; }
+}
+
+
+/* ==========================================================================
+   Upload project / BOQ section (previously inline-styled, non-responsive)
+   ========================================================================== */
+
+.boq-upload-section {
+    background-color: var(--grey-light);
+    padding: 64px 40px;
+    margin-bottom: 64px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+.boq-upload-section .eyebrow { margin-bottom: 12px; }
+.boq-upload-section h2 { margin-bottom: 16px; }
+.boq-desc {
+    margin: 0 auto 32px auto;
+    max-width: 600px;
+}
+.boq-dropzone {
+    border: 2px dashed var(--border-color);
+    padding: 40px 24px;
+    background: var(--white);
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.boq-dropzone:hover,
+.boq-dropzone.drag-over {
+    border-color: var(--accent);
+    background: #fffaf7;
+}
+.boq-dropzone svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--grey-mid);
+    margin-bottom: 1rem;
+}
+.boq-dropzone-title { font-weight: 600; margin-bottom: 8px; }
+.boq-dropzone-sub { font-size: 0.85rem; color: var(--grey-dark); margin-bottom: 0; }
+
+@media (max-width: 600px) {
+    .boq-upload-section { padding: 40px 20px; margin-bottom: 48px; }
+    .boq-dropzone { padding: 28px 16px; }
+}
+
+
+/* ==========================================================================
+   Custom Furniture block (previously inline-styled, non-responsive)
+   ========================================================================== */
+
+.custom-furniture-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.custom-furniture-photo { height: 500px; }
+.custom-furniture-text h2 {
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    margin-bottom: 16px;
+}
+.custom-furniture-text .eyebrow { margin-bottom: 12px; }
+.custom-furniture-text p { margin-bottom: 24px; }
+
+@media (max-width: 900px) {
+    .custom-furniture-block {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 56px;
+    }
+    .custom-furniture-photo { height: 320px; }
+    .custom-furniture-block .custom-furniture-photo { order: -1; }
+}
+@media (max-width: 600px) {
+    .custom-furniture-photo { height: 240px; }
+}
