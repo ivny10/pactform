@@ -8,6 +8,11 @@
     margin-bottom: 8px;
 }
 
+:root {
+    --hero-orange-deep: #7e2401;
+    --hero-orange-vivid: #ff6a33;
+}
+
 /* Page Header & Custom Hero */
 .custom-hero-section {
     margin-bottom: 64px;
@@ -38,6 +43,55 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Orange hero colour block — restyles the existing .custom-hero-section in
+   place. Same copy, same buttons, same placeholder photo box beneath; only
+   the surface, text colour and CTA colour are added.
+   ========================================================================== */
+.hero-orange-block {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    padding-top: 64px;
+    padding-bottom: 56px;
+    border-bottom: none;
+}
+.hero-orange-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(130% 150% at 15% -10%, var(--hero-orange-vivid) 0%, var(--accent) 48%, var(--hero-orange-deep) 100%);
+    z-index: -1;
+}
+.hero-orange-block .subtext { color: rgba(255, 255, 255, 0.92); }
+.hero-orange-block h1,
+.hero-orange-block .hero-desc { color: var(--white); }
+.hero-orange-block .hero-desc { color: rgba(255, 255, 255, 0.85); }
+
+.hero-orange-block .btn-primary {
+    background-color: var(--white);
+    color: var(--hero-orange-deep);
+    border-color: var(--white);
+}
+.hero-orange-block .btn-primary:hover {
+    background-color: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+.hero-orange-block .btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.65);
+}
+.hero-orange-block .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: var(--white);
 }
 
 /* Section Header Shared Layout */

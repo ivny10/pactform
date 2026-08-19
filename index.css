@@ -1,4 +1,13 @@
 /* ==========================================================================
+   Depth tokens — used by the orange hero block + floating chair below.
+   Additive only; existing --accent etc. in global.css are untouched.
+   ========================================================================== */
+:root {
+    --hero-orange-deep: #7e2401;
+    --hero-orange-vivid: #ff6a33;
+}
+
+/* ==========================================================================
    Hero — full-bleed image carousel
    ========================================================================== */
 
@@ -28,11 +37,6 @@
 #carousel-bg-img {
     transition: opacity 0.4s ease;
 }
-
-
-/* ==========================================================================
-   Hero — text overlay (centered over the image)
-   ========================================================================== */
 
 .carousel-content-wrapper {
     position: absolute;
@@ -71,7 +75,27 @@
     font-weight: 600;
     font-size: 0.95rem;
 }
+.carousel-buttons {
+    display: flex;
+    justify-content: center; /* This perfectly centers the buttons */
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 32px; /* Adds breathing room before the slider dots */
+}
 
+/* Mobile Responsiveness for Carousel Buttons */
+@media (max-width: 600px) {
+    .carousel-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .carousel-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 /* ==========================================================================
    Hero — dot slider (centered at the bottom of the hero)
@@ -161,27 +185,80 @@
     transform: translateY(-50%);
 }
 
-
-/* ==========================================================================
-   Hero — relocated intro text (below the image, in the normal container)
-   ========================================================================== */
-
 .hero-text-relocated {
-    text-align: center;
+    text-align: left; /* Sebelumnya: center */
     padding-top: 48px;
     margin-bottom: 60px;
 }
 
 .hero-text-relocated .intro-text {
     max-width: 640px;
-    margin: 16px auto 28px;
+    margin: 16px 0 28px 0; /* Sebelumnya: 16px auto 28px */
     color: var(--grey-dark);
 }
 
 .hero-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* Sebelumnya: center */
     gap: 16px;
+}
+
+.hero-orange-block {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    margin-bottom: 80;
+}
+
+/* Full-bleed orange surface, same technique as .carousel-container above */
+.hero-orange-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(130% 150% at 15% -10%, var(--hero-orange-vivid) 0%, var(--accent) 48%, var(--hero-orange-deep) 100%);
+    z-index: -1;
+}
+
+.hero-orange-block h1,
+.hero-orange-block .hero-subtitle,
+.hero-orange-block .intro-text {
+    color: var(--white);
+}
+.hero-orange-block .hero-subtitle { color: rgba(255, 255, 255, 0.92) !important; }
+.hero-orange-block .intro-text { color: rgba(255, 255, 255, 0.8); }
+
+/* Inverted CTA styling — scoped to this block only, global .btn untouched */
+.hero-orange-block .btn-primary {
+    background-color: var(--white);
+    color: var(--hero-orange-deep);
+    border-color: var(--white);
+}
+.hero-orange-block .btn-primary:hover {
+    background-color: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+.hero-orange-block .btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.65);
+}
+.hero-orange-block .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: var(--white);
+}
+
+@media (max-width: 900px) {
+    .hero-orange-block { padding-top: 64px; padding-bottom: 64px; }
+}
+@media (max-width: 600px) {
+    .hero-orange-block { padding-top: 48px; padding-bottom: 48px; }
 }
 
 
@@ -265,7 +342,7 @@
     padding: 10px 24px;
     font-size: 0.85rem;
     font-weight: 600;
-    text-align: center;
+    text-align: left;
     max-width: 90%;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     z-index: 1;
@@ -277,6 +354,7 @@
    ========================================================================== */
 
 .why-section {
+    margin-top: 80px;
     margin-bottom: 80px;
 }
 
@@ -394,12 +472,6 @@
     .ffe-project-section { padding: 32px 20px; }
     .ffe-desc { max-width: 100%; }
 }
-
-
-/* ==========================================================================
-   Upload project / BOQ section (previously inline-styled, non-responsive)
-   ========================================================================== */
-
 .boq-upload-section {
     background-color: var(--grey-light);
     padding: 64px 40px;
@@ -407,18 +479,22 @@
     text-align: center;
     border: 1px solid var(--border-color);
 }
-.boq-upload-section .eyebrow { margin-bottom: 12px; }
-.boq-upload-section h2 { margin-bottom: 16px; }
 .boq-desc {
-    margin: 0 auto 32px auto;
     max-width: 600px;
+    margin-top: 0;
+    margin-bottom: 32px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .boq-dropzone {
     border: 2px dashed var(--border-color);
     padding: 40px 24px;
     background: var(--white);
     max-width: 500px;
-    margin: 0 auto 24px auto;
+    margin-top: 0;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
     transition: border-color 0.2s ease, background-color 0.2s ease;
 }
@@ -472,4 +548,19 @@
 }
 @media (max-width: 600px) {
     .custom-furniture-photo { height: 240px; }
+}
+@media (max-width: 600px) {
+    .carousel-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+        margin-bottom: 24px;
+    }
+
+    .carousel-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+        display: block; 
+    }
 }
