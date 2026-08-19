@@ -564,3 +564,54 @@
         display: block; 
     }
 }
+body {
+    overflow-x: hidden; /* Wajib ditambahkan agar layar tidak tembus/scroll ke samping */
+}
+
+.hero-orange-block {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    margin-bottom: 80px;
+    
+    /* Membuat background orange full-bleed selebar layar penuh (100vw) */
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    background: radial-gradient(130% 150% at 15% -10%, var(--hero-orange-vivid) 0%, var(--accent) 48%, var(--hero-orange-deep) 100%);
+    overflow: hidden; /* Memotong kursi tepat di batas tepi kanan layar */
+}
+
+.hero-floating-chair {
+    position: absolute;
+    top: 50%;
+    right: 0; /* Menempel di tepi kanan layar penuh */
+    transform: translate(50%, -50%); /* Membuat pas setengah kursi nampak dan setengahnya terpotong di tepi layar */
+    height: 110%;
+    max-height: 500px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Pastikan teks & tombol tetap berada di lapisan atas (di depan kursi) */
+.hero-orange-block h1,
+.hero-orange-block .hero-subtitle,
+.hero-orange-block .intro-text,
+.hero-orange-block .hero-buttons {
+    position: relative;
+    z-index: 2; 
+}
+
+/* Responsif untuk Layar HP/Tablet */
+@media (max-width: 900px) {
+    .hero-floating-chair {
+        height: 100%;
+        transform: translate(40%, -50%);
+        opacity: 0.2; /* Dibuat agak transparan di HP supaya teks tetap terbaca jelas */
+    }
+}
