@@ -538,7 +538,21 @@
     overflow: hidden;
 }
 
+.about-teaser-orange::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('bg furniture.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.10;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .about-teaser {
+    position: relative;
+    z-index: 1;
     border-top: none;
     padding-top: 0;
     margin-bottom: 0;
