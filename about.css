@@ -242,3 +242,59 @@
         padding: 28px 24px;
     }
 }
+
+/* ==========================================================================
+   Orange Accent Sections — matches the gradient treatment used on index.css
+   (hex values hardcoded here since --hero-orange-deep/vivid live in index.css,
+   which this page doesn't load; var(--accent) is already defined in global.css)
+   ========================================================================== */
+
+.cta-box {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(110deg, #651a00 0%, #7e2401 35%, var(--accent) 75%, #ff6a33 100%);
+    border-color: transparent;
+}
+.cta-box .eyebrow {
+    color: #ffe4d1;
+}
+.cta-box h2 {
+    color: #ffffff;
+}
+.cta-box p {
+    color: rgba(255, 255, 255, 0.85);
+}
+.cta-box .btn-primary {
+    background: #ffffff;
+    color: #7e2401;
+    border-color: #ffffff;
+}
+.cta-box .btn-primary:hover {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.cta-box .btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+.cta-box .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #ffffff;
+}
+
+.prof-intro {
+    background: linear-gradient(110deg, #651a00 0%, #7e2401 35%, var(--accent) 75%, #ff6a33 100%);
+    border-right-color: rgba(255, 255, 255, 0.25);
+}
+.prof-intro .eyebrow {
+    color: #ffe4d1;
+}
+.prof-intro h2 {
+    color: #ffffff;
+}
+.prof-intro .prof-line {
+    color: rgba(255, 255, 255, 0.85);
+}

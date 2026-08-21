@@ -195,7 +195,49 @@
 
 /* Results Gallery Horizontal Strip */
 .results-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-top: 56px;
+    padding-bottom: 56px;
     margin-bottom: 80px;
+    background: linear-gradient(110deg, #651a00 0%, var(--hero-orange-deep) 35%, var(--accent) 75%, var(--hero-orange-vivid) 100%);
+}
+.results-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('custom_chair.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+}
+.results-section-inner {
+    position: relative;
+    z-index: 1;
+}
+.results-section .eyebrow {
+    color: #ffe4d1;
+}
+.results-section .section-heading-row {
+    border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+.results-section h2 {
+    color: #ffffff;
+}
+.results-section .heading-desc {
+    color: rgba(255, 255, 255, 0.85);
+}
+.results-section .result-item {
+    background: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 .results-strip {
     display: flex;

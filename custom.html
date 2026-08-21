@@ -78,8 +78,8 @@
             <p class="subtext">03.0 — Bespoke Commercial Fabrication</p>
             <h1>Sometimes the perfect piece doesn't exist yet.</h1>
             <p class="hero-desc">Send us a spec sheet, an architectural drawing, or a photo of something you liked. We'll help you turn it into the real thing—engineered and built to commercial hospitality standards.</p>
-            <div class="placeholder img-box custom-photo">
-                <span class="img-label">PHOTO — a custom piece, ideally beside its technical drawing</span>
+            <div class="custom-photo" style="overflow: hidden;">
+                <img src="custom piece.jpg" alt="A custom piece" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div class="custom-buttons">
                 <a href="#results-strip" class="btn btn-primary">See recent work</a>
@@ -182,16 +182,18 @@
 
         <!-- Recent Custom Work -->
         <section class="results-section">
-            <div class="section-heading-row">
-                <div>
-                    <span class="eyebrow">Portfolio Range</span>
-                    <h2>Recent custom work</h2>
+            <div class="container results-section-inner">
+                <div class="section-heading-row">
+                    <div>
+                        <span class="eyebrow">Portfolio Range</span>
+                        <h2>Recent custom work</h2>
+                    </div>
+                    <p class="heading-desc">Ten distinct pieces we've built to exact project specifications. Scroll through to explore our production range.</p>
                 </div>
-                <p class="heading-desc">Ten distinct pieces we've built to exact project specifications. Scroll through to explore our production range.</p>
-            </div>
 
-            <!-- JavaScript populates this ID — untouched -->
-            <div class="results-strip" id="results-strip"></div>
+                <!-- JavaScript populates this ID — untouched -->
+                <div class="results-strip" id="results-strip"></div>
+            </div>
         </section>
 
         <!-- Ready When You Are CTA -->
